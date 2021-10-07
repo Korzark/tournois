@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 class TestTournois {
 
@@ -94,6 +95,17 @@ class TestTournois {
 		m.play(t1, 90, t2, 90);
 		Team winner = m.getWinner();
 		assertNull(winner);
+	}
+	
+	@Test
+	void oneTeamMatch() {
+		Tournois sut = new Tournois();
+		Team t1 = new Team("teamOne");
+		
+		sut.add(t1);
+		
+		assertThrows(NotEnoughTeamsException.class, () -> sut.launch());
+
 	}
 	
 	

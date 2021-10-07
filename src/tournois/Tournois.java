@@ -14,6 +14,9 @@ public class Tournois {
 	}
 
 	public void launch() {
+		if(this.teams.size() < 2) {
+			throw new NotEnoughTeamsException();
+		}
 		this.bracket = new Bracket(this.teams);
 	}
 
