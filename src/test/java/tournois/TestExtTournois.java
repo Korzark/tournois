@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 
 import tournois.ext.GameAPI;
 import tournois.ext.Result;
@@ -27,8 +28,17 @@ class TestExtTournois {
 		
 		Tournois sut = new Tournois(ext);
 		sut.launch();
-		verify(ext).nextMatch("t1", "t2");
-		
+
+		// verify(ext).nextMatch("t1", "t2");
+		// we should also check that verify(ext).nextMatch("t2", "t1") is OK
+		// Capturing args at invocation and checking them later
+		ArgumentCaptor<String> team1 = ArgumentCaptor.forClass(String.class);
+		ArgumentCaptor<String> team2 = ArgumentCaptor.forClass(String.class);
+		verify(ext).nextMatch(team1.capture(), team2.capture());
+		Set<String> firstTeams = new TreeSet<>();
+		firstTeams.add(team1.getValue());
+		firstTeams.add(team2.getValue());
+		assertEquals(teamNames, firstTeams);
 	}
 	
 	
