@@ -8,10 +8,6 @@
 	<groupId>fr.ensisa.gl.alt</groupId>
 	<artifactId>tournois</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<modules>
-        	<module>codecov-test2</module>
-   	</modules>
-    	<packaging>pom</packaging>
 	
 	<dependencies>
 		<dependency>
