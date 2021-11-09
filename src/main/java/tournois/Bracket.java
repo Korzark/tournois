@@ -7,7 +7,7 @@ import java.util.Set;
 public class Bracket {
 
 	private Collection<Match> matches = new HashSet<>();
-	
+	private String name = "Default bracket";
 
 	public Bracket(Set<Team> teams) {
 		this.matches.add(new Match(teams));
@@ -18,8 +18,6 @@ public class Bracket {
 	}
 	
 	
-	
-	private String name = "Default bracket";
 	public String getBracketName() {
 		return this.name;
 	}
