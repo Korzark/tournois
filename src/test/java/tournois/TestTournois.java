@@ -136,10 +136,11 @@ class TestTournois {
 		player.playerPartiallyTested();
 	}
 		
+	/*
 	@Test 
 	void UnsuccessfulTest() {
 		int test = 0;
 		assertNull(test);
 	}
-		
+	*/
 }
