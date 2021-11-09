@@ -108,6 +108,22 @@ class TestTournois {
 
 	}
 	
-	
+	@Test
+	void setName() {
+		Tournois sut = new Tournois();
+		Bracket br = sut.getBracket();
+		
+		br.setBracketName("Finale");
+		
+		assertEquals("Finale", br.getBracketName());
+	}
 
+	@Test
+	void uselessTest() {
+		Tournois sut = new Tournois();
+		Bracket br = sut.getBracket();
+		
+		assertNull(null);
+		
+	}
 }
