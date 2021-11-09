@@ -111,6 +111,15 @@ class TestTournois {
 	@Test
 	void setName() {
 		Tournois sut = new Tournois();
+
+		Team t1 = new Team("teamOne");
+		Team t2 = new Team("teamTwo");
+		
+		sut.add(t1);
+		sut.add(t2);
+		
+		sut.launch();
+		
 		Bracket br = sut.getBracket();
 		
 		br.setBracketName("Finale");
@@ -119,11 +128,14 @@ class TestTournois {
 	}
 
 	@Test
-	void uselessTest() {
-		Tournois sut = new Tournois();
-		Bracket br = sut.getBracket();
+	void playerTestPass() {
+		Player player = new Player();
+		player.playerTested();
+		player.playerTested();
 		
-		assertNull(null);
+		player.playerPartiallyTested();
+		
+		
 		
 	}
 }
